@@ -7,7 +7,9 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer sound;
-
+//test
+AudioPlayer player;
+AudioInput input;
 
 
 Pipe p1 = new Pipe();
@@ -40,16 +42,18 @@ void setup(){
   p3.x = width + 370;
   titleFont = createFont("BookmanOldStyle-Bold-48", 40);
   quitButtonSetup();
+//test
+  minim = new Minim(this);
+  player = minim.loadFile("Typing On Keyboard-SoundBible.com-1459197142.mp3");
+  input = minim.getLineIn();
+  
+  
+  
   minim= new Minim(this);
   sound = minim.loadFile("Memory_Rain.mp3");
   sound.loop();
-  
-
- 
 }
- 
-void draw(){
- 
+ void draw(){
   background(#03FF76);
   p1.pipe();
   p2.pipe();
@@ -139,3 +143,13 @@ void success(Pipe test){
 }
 void mouseClicked(){
   quitButtonMouseClicked();}
+  
+void mousePressed()
+{
+  player.play();
+}
+void mouseReleased()
+{
+  player.close();
+  player = minim.loadFile("Typing On Keyboard-SoundBible.com-1459197142.mp3");
+}
