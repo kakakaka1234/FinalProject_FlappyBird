@@ -60,7 +60,10 @@ void setup(){
   p3.pipe();
  
   fill(birdColor);
-  ellipse(birdx, birdy, 55,55);
+  PImage img;
+img = loadImage("Bird-yellow-icon.png");
+img.resize(50, 50);
+image(img, birdx, birdy);
   birdy += gravity;
   play();
   success(p1);
