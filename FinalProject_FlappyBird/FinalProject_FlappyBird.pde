@@ -62,7 +62,7 @@ void setup(){
   fill(birdColor);
   PImage img;
 img = loadImage("Bird-yellow-icon.png");
-img.resize(50, 50);
+img.resize(70, 70);
 image(img, birdx, birdy);
   birdy += gravity;
   play();
